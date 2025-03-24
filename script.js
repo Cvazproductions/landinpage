@@ -35,25 +35,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    // Smooth scrolling for anchor links (pero sin bloquear enlaces externos)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        // Solo bloqueamos el comportamiento por defecto si el enlace es interno
+        if (targetElement) {
             e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
+
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
     });
+});
+
     
     // Villa filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -114,31 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'auto'; // Re-enable scrolling
         }
     });
-    
-    // Form submission
-    const contactForm = document.getElementById('contact-form');
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Here you would typically send the form data to a server
-        // For this example, we'll just show a success message
-        
-        const formData = new FormData(contactForm);
-        let formValues = {};
-        
-        for (let [key, value] of formData.entries()) {
-            formValues[key] = value;
-        }
-        
-        console.log('Form submitted:', formValues);
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Show success message
-        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-        
+          
         // Close modal
         modal.style.display = 'none';
         document.body.style.overflow = 'auto'; // Re-enable scrolling
