@@ -117,7 +117,7 @@ nav {
 /* Hero Section con imagen de villa */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/estilos/img/villa.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('villa.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
