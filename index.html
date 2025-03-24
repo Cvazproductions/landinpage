@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVAZ | Find your ideal villa</title>
+    <link rel="stylesheet" href="/estilos/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CVAZ</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Home</a></li>
+                <li><a href="#villas">Villas</a></li>
+                <li><a href="#contacto">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Discover Our Luxury Villas</h1>
+            <p>Unique Experiences in Exclusive Locations</p>
+            <a href="#villas" class="btn">View Villas</a>
+        </div>
+    </section>
+
+    <section class="villas-section" id="villas">
+        <div class="container">
+            <h2>Our Villas</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="playa">Beach</button>
+                <button class="filter-btn" data-filter="montaña">Mountain</button>
+                <button class="filter-btn" data-filter="ciudad">City</button>
+            </div>
+            <div class="villas-container">
+                <div class="villa-card" data-category="playa">
+                    <div class="villa-img">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Villa Marina">
+                    </div>
+                    <div class="villa-info">
+                        <h3>Villa Marina</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Costa del Sol, España</p>
+                        <p class="description">Espectacular villa con vistas al mar, piscina infinita y acceso directo a la playa.</p>
+                        <div class="villa-features">
+                            <span><i class="fas fa-bed"></i> 4 Habitaciones</span>
+                            <span><i class="fas fa-bath"></i> 3 Baños</span>
+                            <span><i class="fas fa-ruler-combined"></i> 280 m²</span>
+                        </div>
+                        <a href="#" class="btn contact-btn" data-villa="Villa Marina">Consultar</a>
+                    </div>
+                </div>
+                <div class="villa-card" data-category="montaña">
+                    <div class="villa-img">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Villa Montaña">
+                    </div>
+                    <div class="villa-info">
+                        <h3>Villa Montaña</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Sierra Nevada, España</p>
+                        <p class="description">Acogedora villa de montaña con chimenea, jacuzzi y vistas panorámicas.</p>
+                        <div class="villa-features">
+                            <span><i class="fas fa-bed"></i> 3 Habitaciones</span>
+                            <span><i class="fas fa-bath"></i> 2 Baños</span>
+                            <span><i class="fas fa-ruler-combined"></i> 210 m²</span>
+                        </div>
+                        <a href="#" class="btn contact-btn" data-villa="Villa Montaña">Consultar</a>
+                    </div>
+                </div>
+                <div class="villa-card" data-category="ciudad">
+                    <div class="villa-img">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Villa Urbana">
+                    </div>
+                    <div class="villa-info">
+                        <h3>Villa Urbana</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Madrid, España</p>
+                        <p class="description">Elegante villa en zona exclusiva con jardín privado, piscina climatizada y gimnasio.</p>
+                        <div class="villa-features">
+                            <span><i class="fas fa-bed"></i> 5 Habitaciones</span>
+                            <span><i class="fas fa-bath"></i> 4 Baños</span>
+                            <span><i class="fas fa-ruler-combined"></i> 350 m²</span>
+                        </div>
+                        <a href="#" class="btn contact-btn" data-villa="Villa Urbana">Consultar</a>
+                    </div>
+                </div>
+                <div class="villa-card" data-category="playa">
+                    <div class="villa-img">
+                        <img src="/placeholder.svg?height=300&width=400" alt="Villa Oceánica">
+                    </div>
+                    <div class="villa-info">
+                        <h3>Villa Oceánica</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ibiza, España</p>
+                        <p class="description">Impresionante villa con diseño moderno, terraza con vistas al mar y piscina privada.</p>
+                        <div class="villa-features">
+                            <span><i class="fas fa-bed"></i> 6 Habitaciones</span>
+                            <span><i class="fas fa-bath"></i> 5 Baños</span>
+                            <span><i class="fas fa-ruler-combined"></i> 420 m²</span>
+                        </div>
+                        <a href="#" class="btn contact-btn" data-villa="Villa Oceánica">Consultar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>We are here to assist you in finding the perfect villa for your needs.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@luxuryvillas.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+57 321 606 74 26</p>
+                </div>
+            </div>
+            <div class="social-media">
+                <a href="https://instagram.com/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                    <span>Follow Us on Instagram</span>
+                </a>
+                <a href="https://wa.me/573216067426" target="_blank" class="social-icon">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Contact Us on WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Cvaz</h3>
+                    <p>Your Destination for Exclusive Villas</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#inicio">Home</a></li>
+                        <li><a href="#villas">Villas</a></li>
+                        <li><a href="#contacto">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/573216067426" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cvaz Villas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="contact-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Solicitar información</h3>
+            <p id="modal-villa-name"></p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+            <div class="direct-contact">
+                <p>O contáctanos directamente:</p>
+                <a href="https://wa.me/573216067426" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+  
+    <script src="script.js"></script>
+
+</body>
+</html>
