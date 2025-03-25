@@ -76,26 +76,67 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function () {
     const galleryItems = document.querySelectorAll('.gallery-item img');
+    let currentIndex = 0;
 
-    galleryItems.forEach(img => {
+    function showImage(index) {
+        // Verifica si ya existe una imagen en pantalla completa y la elimina
+        const existingFullscreen = document.querySelector('.fullscreen');
+        if (existingFullscreen) {
+            existingFullscreen.remove();
+        }
+
+        // Crear el contenedor de imagen en pantalla completa
+        const fullscreenDiv = document.createElement('div');
+        fullscreenDiv.classList.add('fullscreen');
+
+        // Crear la imagen
+        const fullscreenImg = document.createElement('img');
+        fullscreenImg.src = galleryItems[index].src;
+        fullscreenImg.alt = galleryItems[index].alt;
+        currentIndex = index; // Actualizar el índice actual
+
+        // Crear botones de navegación
+        const prevBtn = document.createElement('button');
+        prevBtn.innerHTML = '⭠'; // Flecha izquierda
+        prevBtn.classList.add('nav-btn', 'prev-btn');
+
+        const nextBtn = document.createElement('button');
+        nextBtn.innerHTML = '⭢'; // Flecha derecha
+        nextBtn.classList.add('nav-btn', 'next-btn');
+
+        // Funciones para cambiar de imagen
+        prevBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (currentIndex > 0) {
+                showImage(currentIndex - 1);
+            }
+        });
+
+        nextBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (currentIndex < galleryItems.length - 1) {
+                showImage(currentIndex + 1);
+            }
+        });
+
+        // Cerrar la imagen al hacer clic fuera
+        fullscreenDiv.addEventListener('click', function () {
+            fullscreenDiv.remove();
+        });
+
+        // Agregar los elementos al contenedor y luego al body
+        fullscreenDiv.appendChild(fullscreenImg);
+        if (currentIndex > 0) fullscreenDiv.appendChild(prevBtn);
+        if (currentIndex < galleryItems.length - 1) fullscreenDiv.appendChild(nextBtn);
+        document.body.appendChild(fullscreenDiv);
+    }
+
+    // Agregar evento de clic a cada imagen
+    galleryItems.forEach((img, index) => {
         img.addEventListener('click', function () {
-            // Crear un contenedor para la imagen en pantalla completa
-            const fullscreenDiv = document.createElement('div');
-            fullscreenDiv.classList.add('fullscreen');
-
-            // Crear la imagen dentro del contenedor
-            const fullscreenImg = document.createElement('img');
-            fullscreenImg.src = this.src;
-            
-            // Cerrar la imagen al hacer clic
-            fullscreenDiv.addEventListener('click', function () {
-                document.body.removeChild(fullscreenDiv);
-            });
-
-            // Agregar la imagen al contenedor y mostrarlo
-            fullscreenDiv.appendChild(fullscreenImg);
-            document.body.appendChild(fullscreenDiv);
+            showImage(index);
         });
     });
 });
+
 
