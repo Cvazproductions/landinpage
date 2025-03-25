@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Scroll to gallery section
         document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+        
+        // Expand images to full view
+        galleryItems.forEach(item => {
+            item.classList.add('full-view');
+        });
     });
     
     // Smooth scrolling for navigation links
