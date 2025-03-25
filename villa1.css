@@ -357,12 +357,12 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     z-index: 9999;
 }
 
@@ -370,7 +370,32 @@ footer {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
-    cursor: pointer;
 }
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 10000;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
 
 
