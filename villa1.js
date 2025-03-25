@@ -73,3 +73,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize with "FAVOURITES" tab active
     document.querySelector('[data-filter="all"]').click();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+
+    galleryItems.forEach(img => {
+        img.addEventListener('click', function () {
+            // Crear un contenedor para la imagen en pantalla completa
+            const fullscreenDiv = document.createElement('div');
+            fullscreenDiv.classList.add('fullscreen');
+
+            // Crear la imagen dentro del contenedor
+            const fullscreenImg = document.createElement('img');
+            fullscreenImg.src = this.src;
+            
+            // Cerrar la imagen al hacer clic
+            fullscreenDiv.addEventListener('click', function () {
+                document.body.removeChild(fullscreenDiv);
+            });
+
+            // Agregar la imagen al contenedor y mostrarlo
+            fullscreenDiv.appendChild(fullscreenImg);
+            document.body.appendChild(fullscreenDiv);
+        });
+    });
+});
+
